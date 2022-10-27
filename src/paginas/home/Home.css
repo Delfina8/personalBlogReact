@@ -1,0 +1,12 @@
+.titulo {
+    color:blue;
+    text-align: center;
+}
+
+.img {
+    width:500px;
+    height: 500px;
+    /*Para centralizar a imagem na tela*/
+    display: block;
+    margin: 0 auto; 
+}
