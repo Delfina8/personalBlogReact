@@ -12,7 +12,7 @@ function Footer() {
             <>
                 <Grid container direction="row" justifyContent="center" alignItems="center">
                     <Grid alignItems="center" item xs={12}>
-                        <Box style={{ backgroundColor: "#3F51B5", height: "120px" }}>
+                        <Box style={{ backgroundColor: "#FF731D", height: "120px" }}>
                             <Box paddingTop={1} display="flex" alignItems="center" justifyContent="center">
                                 <Typography variant="h5" align="center" gutterBottom style={{ color: "white" }}>Siga-nos nas redes sociais </Typography>
                             </Box>
@@ -28,13 +28,13 @@ function Footer() {
                                 </a>
                             </Box>
                         </Box>
-                        <Box style={{ backgroundColor: "#303F9F", height: "60px" }}>
+                        <Box style={{ backgroundColor: "#000000", height: "60px" }}>
                             <Box paddingTop={1}>
-                                <Typography variant="subtitle2" align="center" gutterBottom style={{ color: "white" }} >© 2020 Copyright:</Typography>
+                                <Typography variant="subtitle2" align="center" gutterBottom style={{ color: "white" }} >© 2022 Copyright:</Typography>
                             </Box>
                             <Box>
                                 <a target="_blank" href="" rel="noopener noreferrer">
-                                    <Typography variant="subtitle2" gutterBottom style={{ color: "white" }} align="center">Delfina</Typography>
+                                    <Typography variant="subtitle2" gutterBottom style={{ color: "white" }} align="center">Delfina Vicente</Typography>
                                 </a>
                             </Box>
                         </Box>
