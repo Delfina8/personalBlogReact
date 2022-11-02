@@ -7,7 +7,8 @@ import { createStyles, alpha, Theme, makeStyles } from '@material-ui/core/styles
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
 import IconButton from '@material-ui/core/IconButton';
-
+import {Link} from "react-router-dom"
+import "./Navbar.css"
 import { Box } from '@mui/material';
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -74,7 +75,7 @@ function Navbar() {
   return (
   <div className={classes.root}>
     <AppBar position="static">
-      <Toolbar style={{ backgroundColor: "#000000", cursor: "pointer" }}>
+      <Toolbar className='cursor' style={{ backgroundColor: "#000000"}}>
 
         <Typography className={classes.title} variant="h6" noWrap>
           JORNADA DEV
@@ -83,31 +84,33 @@ function Navbar() {
 
         <Box display="flex" justifyContent="end" className={classes.title}>
 
-          <Box mx={1} style={{ cursor: "pointer", paddingRight: "1rem" }}>
+          <Box mx={1} className='cursor' style={{paddingRight: "1rem" }}>
             <Typography variant="h6" color="inherit">
               Home
             </Typography>
           </Box>
-          <Box mx={1} style={{ cursor: "pointer", paddingRight: "1rem" }}>
+          <Box mx={1} className='cursor' style={{paddingRight: "1rem" }}>
             <Typography variant="h6" color="inherit">
               Postagens
             </Typography>
           </Box>
-          <Box mx={1} style={{ cursor: "pointer", paddingRight: "1rem" }}>
+          <Box mx={1} className='cursor' style={{paddingRight: "1rem" }}>
             <Typography variant="h6" color="inherit">
               Temas
             </Typography>
           </Box>
-          <Box mx={1} style={{ cursor: "pointer", paddingRight: "1rem" }}>
+          <Box mx={1} className='cursor' style={{paddingRight: "1rem" }}>
             <Typography variant="h6" color="inherit">
               Cadastrar Tema
             </Typography>
-          </Box>
-          <Box mx={1} style={{ cursor: "pointer", paddingRight: "1rem" }}>
-            <Typography variant="h6" color="inherit">
-              Sair
-            </Typography>
-          </Box>
+            </Box>
+            <Link to ="/login" className="text-decorator-none">
+              <Box mx={1} className='cursor' style={{paddingRight: "1rem" }}>
+                <Typography variant="h6" color="inherit">
+                  Sair
+                </Typography>
+              </Box>
+            </Link>
         </Box>
 
         <div className={classes.search}>

@@ -1,12 +1,18 @@
-.titulo {
-    color:rgb(48, 48, 127);
-    text-align: center;
+.caixa {
+    background-color: #FF731D;
 }
 
-.img {
-    width:500px;
-    height: 500px;
-    /*Para centralizar a imagem na tela*/
-    display: block;
-    margin: 0 auto; 
+.titulo{
+    color: white !important;
+    font-weight: bold !important;
+}
+
+.botao{
+    border-color: white !important;
+    background-color: #FF731D;
+    color: white !important;
+}
+
+.postagens{
+    background-color: white;
 }
