@@ -6,6 +6,7 @@ import {Grid} from '@material-ui/core';
 import Home from './paginas/home/Home';
 import './App.css';
 import Login from "./paginas/login/Login"
+import CadastroUsuario from './paginas/cadastroUsuario/CadastroUsuario';
 
 /* Dentro do Routes entram os componentes que serão alterados, as rotas que serão alteradas*/ 
 
@@ -18,7 +19,7 @@ function App() {
           <Route path="/" element={<Login />} />
           <Route path="/login" element={<Login />} />
           <Route path='/home' element={<Home />} />
-          
+          <Route path='/cadastroUsuario' element={<CadastroUsuario />} />
         </Routes>
       </div>
       <Footer />
