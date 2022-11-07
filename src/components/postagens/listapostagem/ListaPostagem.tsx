@@ -29,7 +29,7 @@ function ListaPostagem() {
 
                             <Link to="" className="text-decorator-none" >
                                 <Box mx={1}>
-                                    <Button variant="contained" className="marginLeft" size='small' color="primary" >
+                                    <Button variant="contained" className="marginLeft botao" size='small' color="primary" >
                                         atualizar
                                     </Button>
                                 </Box>

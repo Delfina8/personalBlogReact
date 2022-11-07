@@ -22,15 +22,15 @@ function ListaTema() {
                         <Box display="flex" justifyContent="center" mb={1.5} >
 
                             <Link to="" className="text-decorator-none">
-                                <Box mx={1} className='botao'>
-                                    <Button variant="contained" className="marginLeft" size='small' >
+                                <Box mx={1} >
+                                    <Button variant="contained" className="marginLeft botao" size='small' >
                                         Atualizar
                                     </Button>
                                 </Box>
                             </Link>
                             <Link to="" className="text-decorator-none">
                                 <Box mx={1}>
-                                    <Button variant="contained" size='small' color="secondary">
+                                    <Button variant="contained" size='small' color="secondary" >
                                         Deletar
                                     </Button>
                                 </Box>
