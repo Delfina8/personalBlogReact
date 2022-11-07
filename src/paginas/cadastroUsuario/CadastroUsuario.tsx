@@ -79,7 +79,7 @@ function CadastroUsuario(){
                             </Link>
                             <Button type='submit' variant="contained" style={{ color: "white", borderColor: "white", backgroundColor: "#FF731D" }}>
                                     Cadastrar 
-                                </Button>
+                            </Button>
                         </Box>
                     </form> 
             </Box>

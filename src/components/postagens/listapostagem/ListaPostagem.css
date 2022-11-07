@@ -1,0 +1,9 @@
+.text-decorator-none{
+    text-decoration: none;
+}
+
+.botao{
+    border-color: white !important;
+    background-color: #FF731D !important;
+    color: white !important;
+}
