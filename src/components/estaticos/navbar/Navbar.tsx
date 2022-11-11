@@ -7,9 +7,11 @@ import { createStyles, alpha, Theme, makeStyles } from '@material-ui/core/styles
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
 import IconButton from '@material-ui/core/IconButton';
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom"
 import "./Navbar.css"
 import { Box } from '@mui/material';
+import { useNavigate } from 'react-router-dom'
+import useLocalStorage from 'react-use-localstorage';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -70,66 +72,81 @@ const useStyles = makeStyles((theme: Theme) =>
 
 function Navbar() {
 
-  const classes = useStyles();
+  const [token, setToken] = useLocalStorage('token');
+  let navigate = useNavigate();
+
+  //Função que vai efetivar o logout. Passa um valor vazio para o token, se houver algum valor armazenado no token ele apaga esse token
+  function goLogout() {
+    setToken('')
+    alert('Usuário desconectado')
+    navigate('/login')
+  }
+
+  const classes = useStyles(); // Isso é da MUI - Personalização da navbar
 
   return (
-  <div className={classes.root}>
-    <AppBar position="static">
-      <Toolbar className='cursor' style={{ backgroundColor: "#000000"}}>
+    <div className={classes.root}>
+      <AppBar position="static">
+        <Toolbar className='cursor' style={{ backgroundColor: "#000000" }}>
 
-        <Typography className={classes.title} variant="h6" noWrap>
-          JORNADA DEV
-        </Typography>
+          <Typography className={classes.title} variant="h6" noWrap>
+            JORNADA DEV
+          </Typography>
 
 
-        <Box display="flex" justifyContent="end" className={classes.title}>
-
-          <Box mx={1} className='cursor' style={{paddingRight: "1rem" }}>
-            <Typography variant="h6" color="inherit">
-              Home
-            </Typography>
-          </Box>
-          <Box mx={1} className='cursor' style={{paddingRight: "1rem" }}>
-            <Typography variant="h6" color="inherit">
-              Postagens
-            </Typography>
-          </Box>
-          <Box mx={1} className='cursor' style={{paddingRight: "1rem" }}>
-            <Typography variant="h6" color="inherit">
-              Temas
-            </Typography>
-          </Box>
-          <Box mx={1} className='cursor' style={{paddingRight: "1rem" }}>
-            <Typography variant="h6" color="inherit">
-              Cadastrar Tema
-            </Typography>
-            </Box>
-            <Link to ="/login" className="text-decorator-none">
-              <Box mx={1} className='cursor' style={{paddingRight: "1rem" }}>
+          <Box display="flex" justifyContent="end" className={classes.title}>
+            <Link to="/home" className="text-decorator-none">
+              <Box mx={1} className='cursor' style={{ paddingRight: "1rem" }}>
                 <Typography variant="h6" color="inherit">
-                  Sair
+                  Home
                 </Typography>
               </Box>
             </Link>
-        </Box>
+            <Link to="/postagens" className="text-decorator-none">
+              <Box mx={1} className='cursor' style={{ paddingRight: "1rem" }}>
+                <Typography variant="h6" color="inherit">
+                  Postagens
+                </Typography>
+              </Box>
+            </Link>
+            <Link to="/temas" className="text-decorator-none">
+              <Box mx={1} className='cursor' style={{ paddingRight: "1rem" }}>
+                <Typography variant="h6" color="inherit">
+                  Temas
+                </Typography>
+              </Box>
+            </Link>
+            <Link to="/formularioTema" className="text-decorator-none">
+              <Box mx={1} className='cursor' style={{ paddingRight: "1rem" }}>
+                <Typography variant="h6" color="inherit">
+                  Cadastrar Tema
+                </Typography>
+              </Box>
+            </Link>
+            <Box mx={1} className='cursor' onClick={goLogout} style={{ paddingRight: "1rem" }}>
+              <Typography variant="h6" color="inherit">
+                Sair
+              </Typography>
+            </Box>
+          </Box>
 
-        <div className={classes.search}>
-          <div className={classes.searchIcon}>
-            <SearchIcon />
+          <div className={classes.search}>
+            <div className={classes.searchIcon}>
+              <SearchIcon />
+            </div>
+            <InputBase
+              placeholder="Search…"
+              classes={{
+                root: classes.inputRoot,
+                input: classes.inputInput,
+              }}
+              inputProps={{ 'aria-label': 'search' }}
+            />
           </div>
-          <InputBase
-            placeholder="Search…"
-            classes={{
-              root: classes.inputRoot,
-              input: classes.inputInput,
-            }}
-            inputProps={{ 'aria-label': 'search' }}
-          />
-        </div>
 
-      </Toolbar>
-    </AppBar>
-  </div>
+        </Toolbar>
+      </AppBar>
+    </div>
   );
 }
 

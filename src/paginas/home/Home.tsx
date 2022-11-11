@@ -1,10 +1,24 @@
-import React from "react"; //Passo obrigatório: Importar  a biblioteca react
+import React, {useEffect} from "react"; //Passo obrigatório: Importar  a biblioteca react
 import {Typography, Grid, Button} from '@material-ui/core';
 import {Box} from "@mui/material";
 import "./Home.css"; //Importar o arquivo css que acabei de criar para dentro do componente
 import TabPostagem from "../../components/postagens/tabpostagem/TabPostagem";
+import ModalPostagem from '../../components/postagens/modalPostagem/ModalPostagem';
+import { useNavigate } from "react-router-dom";
+import useLocalStorage from "react-use-localstorage";
 
-function Home(){ //Função home que vai retornar o conteúdo html que precisa ser renderizado na tela
+function Home() { //Função home que vai retornar o conteúdo html que precisa ser renderizado na tela
+    let navigate = useNavigate();
+    const [token, setToken] = useLocalStorage('token');
+
+    useEffect(() => {
+        if (token == "") {
+            alert("Você precisa estar logado")
+            navigate("/login")
+
+        }
+    }, [token])
+
     return (//Para retornar mais de um elemento devemos usar a div ou as tags de abertura e fechamento (<> </>)
         <>
         <Grid container direction="row" justifyContent="center" alignItems="center" className='caixa'>
@@ -15,6 +29,7 @@ function Home(){ //Função home que vai retornar o conteúdo html que precisa s
                     </Box>
                     <Box display="flex" justifyContent="center">
                         <Box marginRight={1}>
+                            <ModalPostagem />
                         </Box>
                         <Button variant="outlined" className='botao'>Ver Postagens</Button>
                     </Box>
