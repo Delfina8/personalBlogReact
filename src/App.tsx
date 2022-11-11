@@ -2,13 +2,16 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/estaticos/navbar/Navbar';
 import Footer from './components/estaticos/footer/Footer';
-import {Grid} from '@material-ui/core';
 import Home from './paginas/home/Home';
 import './App.css';
 import Login from "./paginas/login/Login"
 import CadastroUsuario from './paginas/cadastroUsuario/CadastroUsuario';
 import ListaTema from './components/temas/listatema/ListaTema';
 import ListaPostagem from './components/postagens/listapostagem/ListaPostagem';
+import CadastroPost from './components/postagens/cadastroPost/CadastroPost';
+import CadastroTema from './components/temas/cadastroTema/CadastroTema';
+import DeletarPostagem from './components/postagens/deletarPostagem/DeletarPostagem';
+import DeletarTema from './components/temas/deletarTema/DeletarTema';
 
 /* Dentro do Routes entram os componentes que serão alterados, as rotas que serão alteradas*/ 
 
@@ -23,7 +26,13 @@ function App() {
           <Route path='/home' element={<Home />} />
           <Route path='/cadastroUsuario' element={<CadastroUsuario />} />
           <Route path='/temas' element={<ListaTema />} />
-          <Route path='/postagem' element={<ListaPostagem />} />
+          <Route path='/postagens' element={<ListaPostagem />} />
+          <Route path='/formularioPostagem' element={<CadastroPost />} />
+          <Route path='/formularioPostagem/:id' element={<CadastroPost />} />
+          <Route path='/formularioTema' element={<CadastroTema />} />
+          <Route path="/formularioTema/:id" element={<CadastroTema />} /> //Rota para editar o tema
+          <Route path="/deletarPostagem/:id" element={<DeletarPostagem />} />
+          <Route path="/deletarTema/:id" element={<DeletarTema />} />
         </Routes>
       </div>
       <Footer />
