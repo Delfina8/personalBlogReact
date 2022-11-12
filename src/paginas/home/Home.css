@@ -11,8 +11,13 @@
     border-color: white !important;
     background-color: #FF731D;
     color: white !important;
+    
 }
 
 .postagens{
     background-color: white;
+}
+
+.text-decorator-none{
+    text-decoration: none;
 }

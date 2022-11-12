@@ -4,14 +4,15 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import InputBase from '@material-ui/core/InputBase';
 import { createStyles, alpha, Theme, makeStyles } from '@material-ui/core/styles';
-import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
-import IconButton from '@material-ui/core/IconButton';
 import { Link } from "react-router-dom"
 import "./Navbar.css"
 import { Box } from '@mui/material';
 import { useNavigate } from 'react-router-dom'
-import useLocalStorage from 'react-use-localstorage';
+import { useDispatch, useSelector } from 'react-redux';
+import { TokenState } from '../../../store/tokens/tokensReducer';
+import { addToken } from '../../../store/tokens/actions';
+import {toast} from 'react-toastify';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -71,20 +72,35 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 function Navbar() {
-
-  const [token, setToken] = useLocalStorage('token');
+  
+  const token = useSelector<TokenState, TokenState["tokens"]>(
+    (state) => state.tokens
+  );
   let navigate = useNavigate();
+  const dispatch = useDispatch(); //constante que fará o envio da ação
 
-  //Função que vai efetivar o logout. Passa um valor vazio para o token, se houver algum valor armazenado no token ele apaga esse token
+  //Função que vai efetivar o logout.
   function goLogout() {
-    setToken('')
-    alert('Usuário desconectado')
+    dispatch(addToken(''));
+    toast.info('Usuário desconectado', {
+            position: "top-right",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: false,
+            theme: "colored",
+            progress: undefined,
+    });
     navigate('/login')
   }
 
-  const classes = useStyles(); // Isso é da MUI - Personalização da navbar
+  var navbarComponent;
 
-  return (
+  const classes = useStyles(); // Isso é da MUI - Personalização da navbar
+  
+  if (token != '') {
+    navbarComponent = 
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar className='cursor' style={{ backgroundColor: "#000000" }}>
@@ -147,6 +163,11 @@ function Navbar() {
         </Toolbar>
       </AppBar>
     </div>
+  }
+  return (
+    <>
+      {navbarComponent}
+    </>
   );
 }
 
