@@ -1,8 +1,8 @@
-.titulo{
-    font-weight: bold;
+.titulo2{
+    font-weight: bold !important;
+    color: white !important;
 }
 
 .corFundo{
     background-color: black;
-
 }
