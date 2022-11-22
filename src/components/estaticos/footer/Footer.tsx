@@ -26,13 +26,10 @@ function Footer() {
                         <Typography variant="h5" align="center" gutterBottom style={{ color: "white" }}>Siga-nos nas redes sociais </Typography>
                     </Box>
                     <Box display="flex" alignItems="center" justifyContent="center">
-                        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
-                            <FacebookIcon className='redes' />
-                        </a>
-                        <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+                        <a href="https://github.com/Delfina8" target="_blank" rel="noopener noreferrer">
                             <GitHubIcon className='redes' />
                         </a>
-                        <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
+                        <a href="https://www.linkedin.com/in/delfinavicente/" target="_blank" rel="noopener noreferrer">
                             <LinkedInIcon className='redes' />
                         </a>
                     </Box>
