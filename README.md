@@ -1,8 +1,37 @@
 # Personal blog project with React | Front-End
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h1 align=center> JORNADA DEV - Personal Blog </h1>
 
-## Available Scripts
+
+<h3 align=left> 📁 Blog: https://blogjornadadev.netlify.app/ </h3>
+
+<br>
+
+![image](https://i.postimg.cc/52JSSrrd/3.jpg)
+![image](https://i.postimg.cc/7ZNMsVvC/2.jpg)
+
+
+Personal blog project developed at Generation Brasil.
+
+<br>
+
+# 🛠 Tools and technologies
+
+## Front-end
+- React
+- HTML5
+- CSS3
+- TypeScript
+- Redux
+- Material UI
+
+## Back-end
+Repository Link: https://github.com/Delfina8/Personal-Blog
+
+
+
+--------------------------------------------
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 In the project directory, you can run:
 
