@@ -3,15 +3,13 @@
 <h1 align=center> JORNADA DEV - Personal Blog </h1>
 
 
-<h3 align=left> 📁 Blog: https://blogjornadadev.netlify.app/ </h3>
-
+<h3 align=center> 📁 Blog: https://blogjornadadev.netlify.app/ </h3>
+Personal blog project developed at Generation Brasil.
 <br>
 
 ![image](https://i.postimg.cc/52JSSrrd/3.jpg)
 ![image](https://i.postimg.cc/7ZNMsVvC/2.jpg)
 
-
-Personal blog project developed at Generation Brasil.
 
 <br>
 
