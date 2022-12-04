@@ -1,10 +1,10 @@
 # Personal blog project with React | Front-End
 
-<h1 align=center> JORNADA DEV - Personal Blog </h1>
+# JORNADA DEV
 
 
 <h3 align=center> 📁 Blog: https://blogjornadadev.netlify.app/ </h3>
-Personal blog project developed at Generation Brasil.
+Personal blog project developed at Generation Brasil
 <br>
 
 ![image](https://i.postimg.cc/52JSSrrd/3.jpg)
